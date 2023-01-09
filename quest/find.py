@@ -1,14 +1,9 @@
-#d = {'a': 1, 'b': {'c': 2}, 'd': {'cricket': {'king': 'kohli'}}}
 d = {'a': 1, 'b': {'c': 2}, 'd': ["cricket", {'king': "kohli"}]}
 def get_dtype(obj):
     if type(obj) == list or type(obj) == tuple:
         return True
     else:
         return False
-        
-def get_dtype_1(obj):
-    return type(obj)
-
 
 def getval(d):
     out = {}
@@ -36,7 +31,7 @@ def fun_1(data, key):
         flag='0'
         for k, v in data.items():
             if get_dtype(v) and k==key:
-                if get_dtype_1(v) == dict:
+                if type(v) == dict:
                     print(v)
                     flag='1'
                 else:
@@ -55,4 +50,4 @@ def fun_1(data, key):
 
                 
     
-fun_1(d,'c')
+fun_1(d,'king')
