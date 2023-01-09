@@ -35,3 +35,19 @@ resource "google_compute_instance" "server" {
   }
 
 }
+
+// instance group
+resource "google_compute_instance_group" "instance_group" {
+  name        = "server-instance-group"
+  description = "Terraform created instance group"
+
+  instances = [
+    google_compute_instance.server.id
+  ]
+
+  named_port{
+          name = "http"
+          port = 80
+        }
+  zone = var.zone
+}

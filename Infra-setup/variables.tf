@@ -22,6 +22,8 @@ variable "project_management_services"{
   default = [ 
     "cloudresourcemanager.googleapis.com",
     "compute.googleapis.com",
-    "iam.googleapis.com"
+    "iam.googleapis.com",
+    "sqladmin.googleapis.com",
+    "appengine.googleapis.com"
    ]
 }
